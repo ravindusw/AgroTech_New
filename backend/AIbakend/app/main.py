@@ -30,7 +30,7 @@ allowed_origins = [origin.strip() for origin in allowed_origins if origin.strip(
 
 # If no origins specified, use a restrictive default
 if not allowed_origins:
-    allowed_origins = ["http://localhost:3000", "http://localhost:3001"]
+    allowed_origins = ["http://localhost:3000", "http://localhost:3001", "https://agrotechui.onrender.com", "https://agrotech-1-tbst.onrender.com"]
     logging.warning("No ALLOWED_ORIGINS specified. Using localhost defaults.")
 
 app.add_middleware(

@@ -42,23 +42,23 @@ app.add_middleware(
 )
 
 # CORS headers middleware
-@app.middleware("http")
-async def add_cors_headers(request: Request, call_next):
-    response = await call_next(request)
-    return response
+# @app.middleware("http")
+# async def add_cors_headers(request: Request, call_next):
+#     response = await call_next(request)
+#     return response
 
-# Handle preflight OPTIONS requests for chat endpoint
-@app.options("/chat")
-async def chat_preflight():
-    return {
-        "message": "OK"
-    }
+# # Handle preflight OPTIONS requests for chat endpoint
+# @app.options("/chat")
+# async def chat_preflight():
+#     return {
+#         "message": "OK"
+#     }
 
-@app.options("/chat/clear")
-async def chat_clear_preflight():
-    return {
-        "message": "OK"
-    }
+# @app.options("/chat/clear")
+# async def chat_clear_preflight():
+#     return {
+#         "message": "OK"
+#     }
 
 # Initialize crop recommendation system
 crop_system = CropRecommendationSystem()
